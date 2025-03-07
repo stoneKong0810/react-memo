@@ -1,23 +1,27 @@
-import logo from './logo.svg';
 import './App.css';
+import MemoContainer from './components/MemoContainer';
+import SideBar from './components/SideBar';
+import { useState } from 'react';
 
 function App() {
+  const [memos, setMemos] = useState([{
+    title: 'Test memo',
+    content: 'This is a test memo',
+    createdAt: 0,
+    updatedAt: 0,
+  }]);
+  const [selectedMemoIdx, setSelectedMemoIdx] = useState(0);
+  const setMemo = (memo) => {
+    const newMemos = [...memos];
+    newMemos[selectedMemoIdx] = memo;
+    setMemos(newMemos);
+  };
+
+
   return (
     <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+      <SideBar memos={memos} />
+      <MemoContainer memo={memos[selectedMemoIdx]} setMemo={setMemo} />
     </div>
   );
 }
