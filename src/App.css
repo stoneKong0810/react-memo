@@ -29,3 +29,15 @@
     box-sizing: border-box;
     font-size: 1.1rem;
 }
+
+.MemoItem {
+    width: 100%;
+    white-space: nowrap;
+    text-overflow: ellipsis;
+    overflow: hidden;
+}
+
+.MemoItem.selected {
+    background-color: rgba(100, 100, 100, 0.5);
+    font-weight: bold;
+}
