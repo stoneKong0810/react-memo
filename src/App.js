@@ -9,7 +9,13 @@ function App() {
     content: 'This is a test memo',
     createdAt: 0,
     updatedAt: 0,
-  }]);
+  }, {
+    title: 'Test memo 2',
+    content: 'This is a test memo 2',
+    createdAt: 0,
+    updatedAt: 0,
+  },
+  ]);
   const [selectedMemoIdx, setSelectedMemoIdx] = useState(0);
   const setMemo = (memo) => {
     const newMemos = [...memos];
@@ -20,7 +26,7 @@ function App() {
 
   return (
     <div className="App">
-      <SideBar memos={memos} />
+      <SideBar memos={memos} setSelectedMemoIdx={setSelectedMemoIdx} />
       <MemoContainer memo={memos[selectedMemoIdx]} setMemo={setMemo} />
     </div>
   );
