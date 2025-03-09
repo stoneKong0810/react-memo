@@ -6,7 +6,11 @@ function SideBar({ memos, selectedMemoIdx, setSelectedMemoIdx }) {
   return (
     <div className={'SideBar'}>
       <SideBarHeader />
-      <MemoList memos={memos} selectedMemoIdx={selectedMemoIdx} setSelectedMemoIdx={setSelectedMemoIdx} />
+      <MemoList
+        memos={memos}
+        selectedMemoIdx={selectedMemoIdx}
+        setSelectedMemoIdx={setSelectedMemoIdx}
+      />
       <SideBarFooter />
     </div>
   );
