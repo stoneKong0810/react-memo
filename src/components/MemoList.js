@@ -5,6 +5,7 @@ function MemoList({ memos, selectedMemoIdx, setSelectedMemoIdx }) {
     <div>
       {memos.map((memo, idx) => (
         <MemoItem
+          className={'MemoItem'}
           key={idx}
           onClick={() => {
             setSelectedMemoIdx(idx);

@@ -17,13 +17,13 @@ function App() {
   },
   ]);
   const [selectedMemoIdx, setSelectedMemoIdx] = useState(0);
+
   const setMemo = (memo) => {
     const newMemos = [...memos];
     newMemos[selectedMemoIdx] = memo;
     setMemos(newMemos);
   };
-
-
+  
   return (
     <div className="App">
       <SideBar memos={memos}
