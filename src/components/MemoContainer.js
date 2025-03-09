@@ -1,4 +1,6 @@
 function MemoContainer({ memo, setMemo }) {
+  const DATE_TIME = new Date().getTime();
+
   return (
     <div className={'MemoContainer'}>
       <div>
@@ -6,7 +8,10 @@ function MemoContainer({ memo, setMemo }) {
                className={'MemoContainer__title'}
                value={memo.title}
                onChange={e => {
-                 setMemo({ ...memo, title: e.target.value, updatedAt: Date.now() });
+                 setMemo({
+                   ...memo,
+                   title: e.target.value, updatedAt: DATE_TIME,
+                 });
                }}
         />
       </div>
@@ -14,7 +19,10 @@ function MemoContainer({ memo, setMemo }) {
         <textarea className={'MemoContainer__content'}
                   value={memo.content}
                   onChange={e => {
-                    setMemo({ ...memo, content: e.target.value, updatedAt: Date.now() });
+                    setMemo({
+                      ...memo,
+                      content: e.target.value, updatedAt: DATE_TIME,
+                    });
                   }}
         />
       </div>

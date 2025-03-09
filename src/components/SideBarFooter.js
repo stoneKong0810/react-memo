@@ -1,7 +1,11 @@
-function SideBarFooter() {
+function SideBarFooter({ onClick }) {
   return (
-    <div>
-      SideBarHeader
+    <div className={'SideBarFooter'}>
+      <button
+        className={'SideBarFooter__add-btn'}
+        onClick={onClick}
+      >+
+      </button>
     </div>
   );
 }

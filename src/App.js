@@ -16,6 +16,9 @@ function App() {
     updatedAt: 0,
   },
   ]);
+
+  const DATE_TIME = new Date().getTime();
+
   const [selectedMemoIdx, setSelectedMemoIdx] = useState(0);
 
   const setMemo = (memo) => {
@@ -23,12 +26,24 @@ function App() {
     newMemos[selectedMemoIdx] = memo;
     setMemos(newMemos);
   };
-  
+
+  const addMemo = () => {
+    setMemos([...memos,
+      {
+        title: 'New memo',
+        content: '',
+        createdAt: DATE_TIME,
+        updatedAt: DATE_TIME,
+      }]);
+    setSelectedMemoIdx(memos.length);
+  };
+
   return (
     <div className="App">
       <SideBar memos={memos}
                selectedMemoIdx={selectedMemoIdx}
                setSelectedMemoIdx={setSelectedMemoIdx}
+               addMemo={addMemo}
       />
       <MemoContainer memo={memos[selectedMemoIdx]}
                      setMemo={setMemo}
