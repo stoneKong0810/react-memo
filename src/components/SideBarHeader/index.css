@@ -1,0 +1,6 @@
+.SideBarHeader {
+    padding: 15px;
+    font-weight: 700;
+    display: flex;
+    align-items: center;
+}
