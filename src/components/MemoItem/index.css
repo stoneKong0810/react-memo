@@ -1,26 +1,17 @@
 .MemoItem {
     width: 100%;
-    white-space: nowrap;
-    text-overflow: ellipsis;
-    overflow: hidden;
+    padding: 8px 8px;
+    cursor: pointer;
+    box-sizing: border-box;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
 }
 
 .MemoItem.selected {
     background-color: rgba(100, 100, 100, 0.5);
     font-weight: bold;
 }
-
-.MemoItem {
-    height: 30px;
-    padding: 0 10px;
-    display: flex;
-    align-items: center;
-    line-height: 30px;
-    justify-content: space-between;
-    box-sizing: border-box;
-    cursor: pointer;
-}
-
 
 .MemoItem__del-btn {
     background: none;
@@ -30,5 +21,13 @@
 }
 
 .MemoItem:hover .MemoItem__del-btn {
-    display: block;
+    display: inline-block;
+}
+
+.MemoItem__title {
+    display: inline-block;
+    max-width: 85%;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
 }

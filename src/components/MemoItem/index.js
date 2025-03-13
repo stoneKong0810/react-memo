@@ -6,7 +6,7 @@ function MemoItem({ children: title, onClickItem, onClickDelete, isSelected }) {
       className={'MemoItem' + (isSelected ? ' selected' : '')}
       onClick={onClickItem}
     >
-      {title}
+      <span className={'MemoItem__title'}>{title}</span>
       <button className={'MemoItem__del-btn'} onClick={onClickDelete}>
         X
       </button>
